@@ -1,13 +1,20 @@
 package xyz.mon0mon.hellospring.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import xyz.mon0mon.hellospring.domain.Member;
 import xyz.mon0mon.hellospring.repository.MemberRepository;
-import xyz.mon0mon.hellospring.repository.MemoryMemberRepository;
 
 import java.util.*;
 
+@Service
 public class MemberService {
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
+
+    @Autowired
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     /**
      * 회원 가입
