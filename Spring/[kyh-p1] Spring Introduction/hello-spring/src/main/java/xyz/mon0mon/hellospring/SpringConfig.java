@@ -15,12 +15,14 @@ public class SpringConfig {
     private DataSource dataSource;
     private JdbcClient jdbcClient;
     private EntityManager em;
+    private final MemberRepository memberRepository;
 
     @Autowired
-    public SpringConfig(DataSource dataSource, JdbcClient jdbcClient, EntityManager em) {
+    public SpringConfig(DataSource dataSource, JdbcClient jdbcClient, EntityManager em, MemberRepository memberRepository) {
         this.dataSource = dataSource;
         this.jdbcClient = jdbcClient;
         this.em = em;
+        this.memberRepository = memberRepository;
     }
 
     @Bean
@@ -34,6 +36,7 @@ public class SpringConfig {
 //        return new JdbcMemberRepository(dataSource);
 //        return new JdbcTemplateMemberRepository(dataSource);
 //        return new JdbcClientMemberRepository(jdbcClient);
-        return new JpaMemberRepository(em);
+//        return new JpaMemberRepository(em);
+        return memberRepository;
     }
 }
