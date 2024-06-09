@@ -1,7 +1,13 @@
 package xyz.mon0mon.hellospring.domain;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Member {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column
     private String name;
 
     public Long getId() {

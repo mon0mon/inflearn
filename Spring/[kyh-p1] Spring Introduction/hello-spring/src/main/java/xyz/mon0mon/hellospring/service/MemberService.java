@@ -1,12 +1,12 @@
 package xyz.mon0mon.hellospring.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import xyz.mon0mon.hellospring.domain.Member;
 import xyz.mon0mon.hellospring.repository.MemberRepository;
 
 import java.util.*;
 
+@Transactional
 public class MemberService {
     private final MemberRepository memberRepository;
 

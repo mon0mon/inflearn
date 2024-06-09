@@ -33,7 +33,7 @@ public class SpringConfig {
 //        return new MemoryMemberRepository();
 //        return new JdbcMemberRepository(dataSource);
 //        return new JdbcTemplateMemberRepository(dataSource);
-        return new JdbcClientMemberRepository(jdbcClient);
-//        return new JpaMemberRepository(em);
+//        return new JdbcClientMemberRepository(jdbcClient);
+        return new JpaMemberRepository(em);
     }
 }
