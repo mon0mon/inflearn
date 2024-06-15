@@ -2,6 +2,7 @@ package xyz.mon0mon.core;
 
 import xyz.mon0mon.core.discount.DiscountPolicy;
 import xyz.mon0mon.core.discount.FixDiscountPolicy;
+import xyz.mon0mon.core.discount.RateDiscountPolicy;
 import xyz.mon0mon.core.member.MemberService;
 import xyz.mon0mon.core.member.MemberServiceImpl;
 import xyz.mon0mon.core.member.MemoryMemberRepository;
@@ -23,5 +24,6 @@ public class AppConfig {
 
     private DiscountPolicy getDiscountPolicy() {
         return new FixDiscountPolicy();
+//        return new RateDiscountPolicy();
     }
 }
