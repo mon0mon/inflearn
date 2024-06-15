@@ -1,0 +1,52 @@
+direction: down
+
+# Variable Init
+ac: ApplicationContext {
+    style {
+        font-size: 25
+        double-border: true
+        underline: true
+    }
+}
+
+ac_ac: AnnotionConfig\nApplicationContext {
+    shape: image
+    icon: https://icons.terrastruct.com/dev%2Fjava.svg
+}
+gx_ac: GenericXml\nApplicationContext {
+    shape: image
+    icon: https://www.svgrepo.com/show/31053/xml.svg
+}
+xx_ac: Xxx\nApplicationContext {
+    shape: image
+    icon: https://icons.terrastruct.com/essentials%2F257-file.svg
+}
+
+bd1: BeanDefinition
+bd2: BeanDefinition
+bd3: BeanDefinition
+
+abdr: Annotated\nBeanDefinitionReader
+xbdr: Xml\nBeanDefinitionReader
+xxbdr: Xxx\nBeanDefinitionReader
+
+acc: 'AppConfig.class'
+acx: 'AppConfig.xml'
+acxx: 'AppConfig.xxx'
+
+# Relation
+ac <- ac_ac
+ac <- gx_ac
+ac <- xx_ac
+
+ac_ac <- abdr
+gx_ac <- xbdr
+xx_ac <- xxbdr
+
+abdr <- acc : '1. 설정 정보 읽기'
+xbdr <- acx : '1. 설정 정보 읽기'
+xxbdr <- acxx : '1. 설정 정보 읽기'
+
+acc -> bd1 : '2. 빈 메타정보 생성'
+acx -> bd2 : '2. 빈 메타정보 생성'
+acxx -> bd3 : '2. 빈 메타정보 생성'

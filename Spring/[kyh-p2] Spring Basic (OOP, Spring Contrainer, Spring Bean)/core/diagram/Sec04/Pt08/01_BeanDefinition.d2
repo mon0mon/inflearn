@@ -1,0 +1,22 @@
+direction: down
+
+# Variable Init
+c: '스프링 컨테이너' 
+bd: BeanDefinition {
+    style {
+        font-size: 20
+        underline: true
+        double-border: true
+    }
+}
+
+acc: 'AppConfig.class'
+acx: 'AppConfig.xml'
+acxx: 'AppConfig.xxx'
+
+# Relation
+c -> bd
+
+bd <- acc
+bd <- acx
+bd <- acxx
