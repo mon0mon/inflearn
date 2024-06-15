@@ -1,0 +1,33 @@
+direction: down
+
+bf: <<interface>>\nBeanFactory {
+    style.font-size: 20
+}
+
+ac: <<interface>>\nApplicationContext {
+    style.font-size: 20
+}
+
+ac_ac: AnnotationConfig\nApplicationContext
+gx_ac: GenericXml\nApplicationContext
+x_ac: Xxx\nApplicationContext
+
+acc: |md
+### AppConfig.class
+|
+acx: |md
+### AppConfig.xml
+|
+acxx: |md
+### AppConfig.xxx
+|
+
+bf <- ac
+
+ac <- ac_ac
+ac <- gx_ac
+ac <- x_ac
+
+ac_ac -> acc
+gx_ac -> acx
+x_ac -> acxx
