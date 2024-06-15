@@ -1,13 +1,21 @@
 package xyz.mon0mon.core.order;
 
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import xyz.mon0mon.core.AppConfig;
 import xyz.mon0mon.core.member.*;
 
 public class OrderServiceTest {
-    MemberRepository memberRepository = new MemoryMemberRepository();
-    MemberService memberService = new MemberServiceImpl();
-    OrderService orderService = new OrderServiceImpl();
+    MemberService memberService;
+    OrderService orderService;
+
+    @BeforeEach
+    public void beforeEach() {
+        AppConfig appConfig = new AppConfig();
+        memberService = appConfig.memberService();
+        orderService = appConfig.orderService();
+    }
 
     @Test
     void createOrder() {

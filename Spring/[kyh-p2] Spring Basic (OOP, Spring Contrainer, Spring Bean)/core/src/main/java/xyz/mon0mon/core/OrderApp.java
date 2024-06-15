@@ -3,13 +3,12 @@ package xyz.mon0mon.core;
 import xyz.mon0mon.core.member.*;
 import xyz.mon0mon.core.order.Order;
 import xyz.mon0mon.core.order.OrderService;
-import xyz.mon0mon.core.order.OrderServiceImpl;
 
 public class OrderApp {
     public static void main(String[] args) {
-        MemberRepository memberRepository = new MemoryMemberRepository();
-        MemberService memberService = new MemberServiceImpl();
-        OrderService orderService = new OrderServiceImpl();
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
+        OrderService orderService = appConfig.orderService();
 
         Long memberId = 1L;
         Member memberA = new Member(memberId, "memberA", Grade.VIP);

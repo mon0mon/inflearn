@@ -3,11 +3,11 @@ package xyz.mon0mon.core;
 import xyz.mon0mon.core.member.Grade;
 import xyz.mon0mon.core.member.Member;
 import xyz.mon0mon.core.member.MemberService;
-import xyz.mon0mon.core.member.MemberServiceImpl;
 
 public class MemberApp {
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
         Member memberA = new Member(1L, "memberA", Grade.VIP);
         memberService.join(memberA);
 
