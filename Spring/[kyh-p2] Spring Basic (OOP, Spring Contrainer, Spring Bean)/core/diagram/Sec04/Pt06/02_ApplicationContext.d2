@@ -1,0 +1,23 @@
+direction: up
+
+ms: <<interface>>\nMessageSource
+ec: <<interface>>\nEnvironmentCapable
+bf: <<interface>>\nBeanFactory {
+    style {
+        double-border: true
+        font-size: 30
+        bold: true
+        underline: true
+    }
+}
+aep: <<interface>>\nApplicationEventPublisher
+rl: <<interface>>\nResourceLoader
+ac: <<interface>>\nApplicationContext
+
+ac -> ms
+ac -> ec
+ac -> bf {
+    style.animated: true
+}
+ac -> aep
+ac -> rl
