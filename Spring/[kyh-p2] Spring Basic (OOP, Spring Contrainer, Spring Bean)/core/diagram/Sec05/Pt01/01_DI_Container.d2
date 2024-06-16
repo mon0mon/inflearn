@@ -1,0 +1,36 @@
+direction: right
+
+# Variable Init
+ca: '클라이언트 A' {
+    shape: image
+    icon: https://icons.terrastruct.com/aws%2F_General%2FUser_light-bg.svg
+}
+cb: '클라이언트 B' {
+    shape: image
+    icon: https://icons.terrastruct.com/aws%2F_General%2FUser_light-bg.svg
+}
+cc: '클라이언트 C' {
+    shape: image
+    icon: https://icons.terrastruct.com/aws%2F_General%2FUser_light-bg.svg
+}
+
+di: DI Container {
+    ms1: new MemberServiceX01 {
+        shape: oval
+    }
+    ms2: new MemberServiceX02 {
+        shape: oval
+    }
+    ms3: new MemberServiceX03 {
+        shape: oval
+    }
+}
+
+# Relation
+ca -> di: '1. MemberService 요청'
+cb -> di: '1. MemberService 요청'
+cc -> di: '1. MemberService 요청'
+
+di.ms1 -> ca: '2. MemberService 반환'
+di.ms2 -> cb: '2. MemberService 반환'
+di.ms3 -> cc: '2. MemberService 반환'
