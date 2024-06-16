@@ -1,0 +1,15 @@
+direction: up
+
+ac: AppConfig
+acc: AppConfig@CGLIB
+
+sc: '스프링 컨테이너' {
+    direction: up
+    near: center-right
+    ac: 'appConfig' {
+        shape: oval
+    }
+    in: 'instance: AppConfig@CGLIB'
+}
+
+acc -> ac
