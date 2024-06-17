@@ -1,9 +1,12 @@
 package xyz.mon0mon.core;
 
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
+import xyz.mon0mon.core.member.MemberRepository;
+import xyz.mon0mon.core.member.MemoryMemberRepository;
 
 @Configuration
 @ComponentScan (
@@ -15,6 +18,8 @@ import org.springframework.context.annotation.FilterType;
  * 따라서 기존의 AppConfig는 @ComponentScan의 대상이 되지 않도록, 예외처리
  */
 public class AutoAppConfig {
-
+    @Bean(name = "memoryMemberRepository")
+    MemberRepository memberRepository() {
+        return new MemoryMemberRepository();
+    }
 }
-
