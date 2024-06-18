@@ -8,6 +8,10 @@ import xyz.mon0mon.core.member.MemberRepository;
 
 @Component
 public class OrderServiceImpl implements OrderService {
+//    @Autowired
+//    private MemberRepository memberRepository;
+//    @Autowired
+//    private DiscountPolicy discountPolicy;
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
