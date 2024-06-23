@@ -2,9 +2,11 @@ package xyz.mon0mon.core;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import xyz.mon0mon.core.discount.DiscountPolicy;
 import xyz.mon0mon.core.discount.FixDiscountPolicy;
 import xyz.mon0mon.core.discount.RateDiscountPolicy;
+import xyz.mon0mon.core.member.MemberRepository;
 import xyz.mon0mon.core.member.MemberService;
 import xyz.mon0mon.core.member.MemberServiceImpl;
 import xyz.mon0mon.core.member.MemoryMemberRepository;
@@ -27,6 +29,7 @@ public class AppConfig {
     }
 
     @Bean
+    @Primary
     /**
      * public static MemoryMemberRepository memberRepository()
      * static이 붙을 경우 Spring에서 Singleton 임을 보장할 수 없음
@@ -38,16 +41,15 @@ public class AppConfig {
     // call AppConfig.memberRepository
     // call AppConfig.orderService
     // call AppConfig.memberRepository
-    public MemoryMemberRepository memberRepository() {
+    public MemberRepository memberRepository() {
         System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
 
     @Bean
     public OrderService orderService() {
-        System.out.println("call AppConfig.orderService");
-//        return new OrderServiceImpl(memberRepository(), discountPolicy());
-        return null;
+//        System.out.println("call AppConfig.orderService");
+        return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
     @Bean
