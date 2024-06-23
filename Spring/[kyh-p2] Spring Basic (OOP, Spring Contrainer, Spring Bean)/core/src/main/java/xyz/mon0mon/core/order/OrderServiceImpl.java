@@ -1,5 +1,6 @@
 package xyz.mon0mon.core.order;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import xyz.mon0mon.core.discount.DiscountPolicy;
@@ -7,6 +8,7 @@ import xyz.mon0mon.core.member.Member;
 import xyz.mon0mon.core.member.MemberRepository;
 
 @Component
+@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
 //    @Autowired
 //    private MemberRepository memberRepository;
@@ -14,12 +16,6 @@ public class OrderServiceImpl implements OrderService {
 //    private DiscountPolicy discountPolicy;
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
-
-    @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-        this.memberRepository = memberRepository;
-        this.discountPolicy = discountPolicy;
-    }
 
 /*    @Autowired
     public void setMemberRepository(MemberRepository memberRepository) {
