@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import xyz.mon0mon.core.annotation.MainDiscountPolicy;
 import xyz.mon0mon.core.discount.DiscountPolicy;
 import xyz.mon0mon.core.member.Member;
 import xyz.mon0mon.core.member.MemberRepository;
@@ -21,7 +22,7 @@ public class OrderServiceImpl implements OrderService {
     /**
      * @Autowired로 의존관계를 주입시 타입 매칭을 우선 시도하고, 이후 빈 이름을 기반으로 매칭 시도
      */
-    public OrderServiceImpl(MemberRepository memberRepository, @Qualifier("mainDiscountPolicy") DiscountPolicy rateDiscountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy rateDiscountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = rateDiscountPolicy;
     }
