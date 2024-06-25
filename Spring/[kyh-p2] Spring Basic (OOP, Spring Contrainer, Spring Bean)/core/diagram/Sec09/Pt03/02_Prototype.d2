@@ -1,0 +1,41 @@
+direction: down
+title: |md
+  # 프로토타입 빈 직접 요청
+|
+
+# Define nodes
+ca: '클라이언트 A' {
+    shape: person
+}
+cb: '클라이언트 B'{
+    shape: person
+}
+
+pb1: <PrototypeBean@x01>\ncount: 0 -> 1{
+    shape: oval
+    style {
+      fill: green
+      font-color: white
+    }
+}
+pb2: <PrototypeBean@x02>\ncount: 0 -> 1{
+    shape: oval
+    style {
+      fill: green
+      font-color: white
+    }
+}
+
+sc: {
+    label: "스프링 DI 컨테이너"
+}
+
+# Define edges
+ca -> sc: '1. 프로토타입 빈 요청'
+cb -> sc: '1. 프로토타입 빈 요청'
+
+sc -> pb1: '2. 프로토타입 빈 생성, 반환'
+sc -> pb2: '2. 프로토타입 빈 생성, 반환'
+
+pb1 -> ca: '3. addCount()'
+pb2 -> ca: '3. addCount()'

@@ -1,0 +1,33 @@
+direction: right
+title: |md
+  # 싱글톤과 프로토타입 빈
+|
+
+# Define nodes
+ca: '클라이언트 A' {
+  shape: person
+}
+
+sc: '스프링 DI 컨테이너'{
+  cb: '<singleton>clientBean' {
+    shape: oval
+    style: {
+      fill: green
+      font-color: white
+    }
+    pb: <PrototypeBean@x01>\ncount:0 {
+      shape: oval
+      style: {
+        fill: "#335533"
+        font-color: white
+      }
+    }
+  }
+}
+
+# Define edges
+sc.cb -> sc: 1. 프로토타입 빈 요청
+
+sc -> sc.cb.pb: 2. 프로토타입 빈 생성, 반환 {
+  style.font-color: white
+}

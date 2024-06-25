@@ -1,0 +1,41 @@
+direction: down
+title: |md
+  # 프로토타입 빈 직접 요청
+|
+
+# Define nodes
+클라이언트_A: {
+    label: "클라이언트 A"
+    shape: person
+}
+
+PrototypeBean: {
+    label: <PrototypeBean@x01>\ncount: 0 -> 1
+    shape: oval
+    style {
+      fill: green
+      font-color: white
+    }
+}
+
+Spring_DI_컨테이너: {
+    label: "스프링 DI 컨테이너"
+}
+
+# Define edges
+클라이언트_A -> Spring_DI_컨테이너: {
+    label: "1. 프로토타입 빈 요청"
+}
+
+Spring_DI_컨테이너 -> PrototypeBean: {
+    label: "2. 프로토타입 빈 생성, 반환"
+}
+
+PrototypeBean -> 클라이언트_A: {
+    label: "3. addCount()"
+}
+
+# Define grouping
+# Spring_DI_컨테이너 {
+#     PrototypeBean
+# }
