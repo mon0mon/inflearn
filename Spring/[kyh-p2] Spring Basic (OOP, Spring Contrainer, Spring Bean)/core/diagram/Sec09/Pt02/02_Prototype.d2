@@ -1,0 +1,45 @@
+title: |md
+  # 프로토타입 빈 요청1
+|
+direction: right
+
+ca: '클라이언트 A' {
+  shape: image
+  icon: https://icons.terrastruct.com/aws%2F_General%2FUser_light-bg.svg
+}
+cb: '클라이언트 B' {
+  shape: image
+  icon: https://icons.terrastruct.com/aws%2F_General%2FUser_light-bg.svg
+}
+cc: '클라이언트 C' {
+  shape: image
+  icon: https://icons.terrastruct.com/aws%2F_General%2FUser_light-bg.svg
+}
+
+sc: '스프링 DI 컨테이너' {
+  ms1: |md
+    <scope:singleton>
+    memberServicex01
+    (2. 새로운 빈 생성 + DI)
+  | {
+    shape: oval
+  }
+  ms2: |md
+    <scope:singleton>
+    memberServicex02
+    (새로운 빈 생성 + DI)
+  | {
+    shape: oval
+  }
+  ms3: |md
+    <scope:singleton>
+    memberServicex03
+    (새로운 빈 생성 + DI)
+  | {
+    shape: oval
+  }
+}
+
+ca -> sc: 1.memberService 요청
+cb -> sc: memberService 요청
+cc -> sc: memberService 요청

@@ -1,0 +1,36 @@
+title: |md
+# 싱글톤 빈 요청
+|
+direction: right
+
+
+
+ca: '클라이언트 A' {
+    shape: image
+    icon: https://icons.terrastruct.com/aws%2F_General%2FUser_light-bg.svg
+}
+cb: '클라이언트 B' {
+    shape: image
+    icon: https://icons.terrastruct.com/aws%2F_General%2FUser_light-bg.svg
+}
+cc: '클라이언트 C' {
+    shape: image
+    icon: https://icons.terrastruct.com/aws%2F_General%2FUser_light-bg.svg
+}
+
+sc: '스프링 DI 컨테이너' {
+    ms: |md
+        <scope:singleton>
+        memberServicex01
+    | {
+        shape: oval
+    }
+}
+
+ca -> sc: 1.memberService 요청
+cb -> sc: memberService 요청
+cc -> sc: memberService 요청
+
+sc.ms -> ca: 2. 동일한 memberService 반환
+sc.ms -> cb: 동일한 memberService 반환
+sc.ms -> cc: 동일한 memberService 반환

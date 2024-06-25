@@ -1,0 +1,33 @@
+title: |md
+  # 프로토타입 빈 요청1
+|
+direction: right
+
+ca: '클라이언트 A' {
+  shape: image
+  icon: https://icons.terrastruct.com/aws%2F_General%2FUser_light-bg.svg
+}
+cb: '클라이언트 B' {
+  shape: image
+  icon: https://icons.terrastruct.com/aws%2F_General%2FUser_light-bg.svg
+}
+cc: '클라이언트 C' {
+  shape: image
+  icon: https://icons.terrastruct.com/aws%2F_General%2FUser_light-bg.svg
+}
+
+sc: '스프링 DI 컨테이너' {
+  ms1: '' {
+    shape: oval
+  }
+  ms2: '' {
+    shape: oval
+  }
+  ms3: '' {
+    shape: oval
+  }
+}
+
+sc.ms1 -> ca: '3. 생성된 빈 반환, 관리X'
+sc.ms2 -> cb: '생성된 빈 반환, 관리X'
+sc.ms3 -> cc: '생성된 빈 반환, 관리X'
