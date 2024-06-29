@@ -24,13 +24,13 @@ public class MyLogger {
 
   @PostConstruct
   public void init() {
-    String uuid = UUID.randomUUID()
+    uuid = UUID.randomUUID()
         .toString();
-      System.out.println("[" + uuid + "] request scope bean create:" + this);
+    System.out.println("[" + uuid + "] request scope bean create:" + this);
   }
 
   @PreDestroy
   public void close() {
-      System.out.println("[" + uuid + "] request scope bean close:" + this);
+    System.out.println("[" + uuid + "] request scope bean close:" + this);
   }
 }
