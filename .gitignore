@@ -36,6 +36,33 @@ out/
 ### VS Code ###
 .vscode/
 
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+!.vscode/extensions.json
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+#######################
+# Backend
+#######################
+### 김영한 Spring 강의 ###
 spring-start-v20240120/
 spring-start-v20240120.zip
 
@@ -48,3 +75,9 @@ spring-mvc1-v20240419.zip
 springmvc1-v2020-03-08/
 springmvc1-v2020-03-08.zip
 스프링MVC-웹애플리케이션이해v2020-03-08.pdf
+
+#######################
+# Frontend
+#######################
+### 정재남 React 공식문서 함께 공부하기 ###
+Frontend/
