@@ -1,0 +1,21 @@
+###
+POST http://localhost:8080/mapping-consume
+Content-Type: application/json
+
+{"data": "value"}
+
+> {%
+  client.test("Request executed successfully", function() {
+    client.assert(response.status === 200, "Response status is not 200");
+  });
+%}
+
+###
+POST http://localhost:8080/mapping-consume
+
+> {%
+  client.test("Request executed successfully", function() {
+    client.assert(response.status === 200, "Response status is not 200");
+  });
+%}
+

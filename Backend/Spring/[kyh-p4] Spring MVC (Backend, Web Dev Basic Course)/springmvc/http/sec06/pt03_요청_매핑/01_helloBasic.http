@@ -1,0 +1,14 @@
+###
+GET http://localhost:8080/hello-basic
+
+###
+POST http://localhost:8080/hello-basic
+
+###
+PUT http://localhost:8080/hello-basic
+
+###
+PATCH http://localhost:8080/hello-basic
+
+###
+DELETE http://localhost:8080/hello-basic

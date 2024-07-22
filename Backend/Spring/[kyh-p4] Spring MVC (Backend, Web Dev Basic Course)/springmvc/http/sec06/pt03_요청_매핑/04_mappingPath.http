@@ -1,0 +1,17 @@
+###
+GET http://localhost:8080/mapping/1
+
+> {%
+  client.test("Request executed successfully", function() {
+    client.assert(response.status === 200, "Response status is not 200");
+  });
+%}
+
+###
+GET http://localhost:8080/mapping/users/userA/orders/100
+
+> {%
+  client.test("Request executed successfully", function() {
+    client.assert(response.status === 200, "Response status is not 200");
+  });
+%}
