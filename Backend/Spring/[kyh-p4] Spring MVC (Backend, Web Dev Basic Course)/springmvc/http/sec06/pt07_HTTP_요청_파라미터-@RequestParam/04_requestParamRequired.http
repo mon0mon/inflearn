@@ -1,0 +1,26 @@
+###
+GET http://localhost:8080/request-param-required?username=kim&age=20
+
+> {%
+  client.test("Request executed successfully", function() {
+    client.assert(response.status === 200, "Response status is not 200");
+  });
+%}
+
+###
+GET http://localhost:8080/request-param-required
+
+> {%
+  client.test("Request executed successfully", function() {
+    client.assert(response.status === 200, "Response status is not 200");
+  });
+%}
+
+###
+GET http://localhost:8080/request-param-required?username=
+
+> {%
+  client.test("Request executed successfully", function() {
+    client.assert(response.status === 200, "Response status is not 200");
+  });
+%}
