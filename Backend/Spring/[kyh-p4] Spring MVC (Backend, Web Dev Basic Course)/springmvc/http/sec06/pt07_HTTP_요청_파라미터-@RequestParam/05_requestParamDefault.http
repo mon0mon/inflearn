@@ -1,5 +1,5 @@
 ###
-GET http://localhost:8080/request-param-required?username=kim&age=20
+GET http://localhost:8080/request-param-default?username=kim&age=20
 
 > {%
   client.test("Request executed successfully", function() {
@@ -8,7 +8,7 @@ GET http://localhost:8080/request-param-required?username=kim&age=20
 %}
 
 ###
-GET http://localhost:8080/request-param-required?username=kim
+GET http://localhost:8080/request-param-default?username=kim
 
 > {%
   client.test("Request executed successfully", function() {
@@ -17,7 +17,7 @@ GET http://localhost:8080/request-param-required?username=kim
 %}
 
 ###
-GET http://localhost:8080/request-param-required?username=
+GET http://localhost:8080/request-param-default?username=
 
 > {%
   client.test("Request executed successfully", function() {
@@ -26,7 +26,7 @@ GET http://localhost:8080/request-param-required?username=
 %}
 
 ###
-GET http://localhost:8080/request-param-required?age=20
+GET http://localhost:8080/request-param-default?age=20
 
 > {%
   client.test("Request executed successfully", function() {
