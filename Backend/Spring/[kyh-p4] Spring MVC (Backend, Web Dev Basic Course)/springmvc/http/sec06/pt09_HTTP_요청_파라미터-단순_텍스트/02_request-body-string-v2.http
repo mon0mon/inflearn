@@ -1,0 +1,26 @@
+###
+POST http://localhost:8080/request-body-string-v2
+Content-Type: text/plain
+
+hello
+
+> {%
+  client.test("Request executed successfully", function() {
+    client.assert(response.status === 200, "Response status is not 200");
+  });
+%}
+
+
+###
+POST http://localhost:8080/request-body-string-v2
+Content-Type: application/json
+
+{
+  "value": "hello"
+}
+
+> {%
+  client.test("Request executed successfully", function() {
+    client.assert(response.status === 200, "Response status is not 200");
+  });
+%}
