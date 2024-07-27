@@ -1,0 +1,28 @@
+###
+POST http://localhost:8080/request-body-json-v2
+Content-Type: application/json
+
+{
+  "username": "kim",
+  "age": 20
+}
+
+> {%
+  client.test("Request executed successfully", function() {
+    client.assert(response.status === 200, "Response status is not 200");
+  });
+%}
+
+###
+POST http://localhost:8080/request-body-json-v2
+Content-Type: application/json
+
+{
+  "value": "hello"
+}
+
+> {%
+  client.test("Request executed successfully", function() {
+    client.assert(response.status === 200, "Response status is not 200");
+  });
+%}
