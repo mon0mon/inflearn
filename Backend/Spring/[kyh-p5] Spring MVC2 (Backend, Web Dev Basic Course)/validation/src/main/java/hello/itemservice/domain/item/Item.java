@@ -9,15 +9,15 @@ import org.hibernate.validator.constraints.Range;
 @Data
 public class Item {
 
-    @NotNull    // 수정 요구사항 추가
+    @NotNull(groups = UpdateCheck.class)    // 수정 요구사항 추가
     private Long id;
-    @NotBlank(message = "공백X")
+    @NotBlank(groups = {SaveCheck.class, UpdateCheck.class})
     private String itemName;
-    @NotNull
+    @NotNull(groups = {SaveCheck.class, UpdateCheck.class})
     @Range(min = 1_000, max = 1_000_000)
     private Integer price;
-    @NotNull
-//    @Max(9_999)   // 수정 요구사항 추가
+    @NotNull(groups = {SaveCheck.class, UpdateCheck.class})
+    @Max(value = 9_999, groups = {SaveCheck.class})   // 수정 요구사항 추가
     private Integer quantity;
 
     public Item() {
