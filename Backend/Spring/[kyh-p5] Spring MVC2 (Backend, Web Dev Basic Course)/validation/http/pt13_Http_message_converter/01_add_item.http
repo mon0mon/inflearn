@@ -1,0 +1,30 @@
+### 성공 조건
+POST http://localhost:8080/validation/api/items/add
+Content-Type: application/json
+
+{
+  "itemName": "test",
+  "price": 1000,
+  "quantity": 10
+}
+
+### 실패 조건 1 (DataBinding에 실패)
+### Exception 발생으로 컨트롤러 호출 자체가 안됨
+POST http://localhost:8080/validation/api/items/add
+Content-Type: application/json
+
+{
+  "itemName": "",
+  "price": -1,
+  "quantity": "qqq"
+}
+
+### 실패 조건 2 (Validation 실패)
+POST http://localhost:8080/validation/api/items/add
+Content-Type: application/json
+
+{
+  "itemName": "",
+  "price": 10,
+  "quantity": 99999
+}
