@@ -7,11 +7,12 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.logging.XMLFormatter;
+import org.springframework.stereotype.Component;
 
 /**
  * 세션 관리
  */
+@Component
 public class SessionManager {
 
   public static final String SESSION_COOKIE_NAME = "mySessionId";
