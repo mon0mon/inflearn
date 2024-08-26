@@ -1,0 +1,7 @@
+### GET request
+GET http://localhost:8080/api/members/spring
+Accept: application/json
+
+### Get request
+GET http://localhost:8080/api/members/ex
+Accept: application/json
