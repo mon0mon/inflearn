@@ -1,0 +1,6 @@
+### GET request
+GET http://localhost:8080/api/members/user-ex
+Accept: application/json
+
+### GET request
+GET http://localhost:8080/api/members/user-ex
