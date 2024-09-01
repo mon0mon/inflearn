@@ -15,7 +15,7 @@ public class ConverterTest {
 
   @Test
   void IntegerToString() {
-    IntegerToString converter = new IntegerToString();
+    IntegerToStringConverter converter = new IntegerToStringConverter();
     String result = converter.convert(10);
     assertThat(result).isEqualTo("10");
   }
