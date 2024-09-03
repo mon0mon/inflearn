@@ -81,6 +81,9 @@ spring-mvc2-v20240715.zip
 mvc2_source_v20210624/
 mvc2_source_v20210624.zip
 
+# Servlet 업로드 시, 파일들을 제외하는 옵션
+**/file/*
+
 #######################
 # Frontend
 #######################
