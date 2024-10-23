@@ -1,0 +1,3 @@
+[submodule "Backend/Spring/[tobi-p1] Spring Basic/hellospring/ref"]
+	path = Backend/Spring/[tobi-p1] Spring Basic/hellospring/ref
+	url = git@github.com:tobyspringboot/hellospring.git
